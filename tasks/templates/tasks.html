@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encuestas Registradas</title>
+</head>
+<body>
+    <h1>Encuestas Registradas</h1>
+<table>
+        <thead>
+            <tr>               
+                <th>Nombre</th>
+                <th>Domicilio</th>
+                <th>Edad</th>
+                <th>Género</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <thead>
+            {% for task in tasks %}
+            <tr>
+                <td>{{task.nombre_completo}}</td>
+                <td>{{task.participacion}}</td>
+                <td>{{task.edad }}</td>
+                <td>{{task.genero}}</td>
+                <td><a href="{% url 'task_detail' task.id %}">Ver Detalles</a></td>    
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}

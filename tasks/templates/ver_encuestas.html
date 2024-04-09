@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encuestas Registradas</title>
+</head>
+<body>
+    <h1>Encuestas Registradas</h1>
+<table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Domicilio</th>
+                <th>Edad</th>
+                <th>Género</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for encuesta in encuestas %}
+            <tr>
+                <td>{{ encuesta.nombre }}</td>
+                <td>{{ encuesta.domicilio }}</td>
+                <td>{{ encuesta.edad }}</td>
+                <td>{{ encuesta.genero }}</td>
+                <td><a href="#">Ver Detalles</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
